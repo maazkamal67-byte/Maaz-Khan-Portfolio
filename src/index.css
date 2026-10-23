@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700;800&family=Syne:wght@600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Space Grotesk", "Syne", -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand-emerald: #10b981;
+  --color-brand-teal: #06b6d4;
+  --color-brand-purple: #a855f7;
+  --color-brand-dark: #030712;
+  --color-brand-surface: #0b1120;
+
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-pulse-slow: pulseSlow 4s ease-in-out infinite;
+  --animate-glow: glowCycle 6s ease-in-out infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes pulseSlow {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.03); }
+  }
+
+  @keyframes glowCycle {
+    0%, 100% { filter: drop-shadow(0 0 15px rgba(16, 185, 129, 0.3)); }
+    50% { filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.4)); }
+  }
+}
+
+:root {
+  --app-bg: #030712;
+  --app-surface: #0b1120;
+  --app-border: rgba(255, 255, 255, 0.08);
+  --app-border-strong: rgba(255, 255, 255, 0.15);
+  --app-text: #94a3b8;
+  --app-heading: #f8fafc;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+body {
+  background-color: #030712;
+  color: #94a3b8;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  selection-background-color: rgba(16, 185, 129, 0.3);
+  selection-color: #ffffff;
+}
+
+/* Glassmorphic border utilities */
+.glass-panel {
+  background: rgba(11, 17, 32, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.glass-pill {
+  background: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Radial ambient lighting */
+.bg-ambient-radial {
+  background: radial-gradient(circle 900px at 50% 15%, rgba(15, 23, 42, 0.7) 0%, rgba(3, 7, 18, 0.95) 70%, #030712 100%);
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
